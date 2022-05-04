@@ -29,4 +29,4 @@ class Receipts(models.Model):
     )
 
     def __str__(self):
-        return self.vendor
+        return self.vendor + self.category + self.account
