@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block main_content %}
+
+<main>
+  <form method="post">
+    {{form.as_p}} {% csrf_token %}
+    <button type="submit">Create Receipt</button>
+  </form>
+</main>
+
+{% endblock main_content %}

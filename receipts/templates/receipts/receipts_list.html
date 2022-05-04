@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block main_content %}
+<nav>
+  <a href="{% url 'receipts_list' %}">Receipts</a>
+  <a href="{% url 'receipt_create' %}">Create Receipt</a>
+</nav>
+<main>
+  <h1>Receipts</h1>
+</main>
+{% endblock main_content %}
