@@ -21,5 +21,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", RedirectView.as_view(url=reverse_lazy("receipts_list"))),
     path("receipts/", include("receipts.urls")),
-    path("accounts/", include("accounts.urls")),
+    # path("accounts/", include("accounts.urls")),
 ]
