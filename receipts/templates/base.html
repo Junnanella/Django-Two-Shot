@@ -1,10 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "css/receipts.css"%}">
     <title>Expenses</title>
   </head>
   <body>
+    <nav>
+      <a class="nav-link" href="{% url 'receipts_list' %}">Receipts</a>
+      <a class="nav-link" href="{% url 'receipt_create' %}">Create Receipt</a>
+      <a class="nav-link" href="{% url 'catergories_list' %}">Categories</a>
+      <a class="nav-link" href="{% url 'accounts_list' %}">Accounts</a>
+    </nav>
     {% block main_content %} {% endblock main_content %}
   </body>
 </html>
