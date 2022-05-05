@@ -16,7 +16,7 @@ def signup(request):
             #         username = the "username" value from the request.POST dictionary
             username = request.POST.get("username")
             #         password = the "password1" value from the request.POST dictionary
-            password = request.POST.get("password")
+            password = request.POST.get("password1")
             #         user = create a new user using username and password
             user = User.objects.create_user(
                 username=username,
