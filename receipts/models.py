@@ -1,5 +1,8 @@
 from django.db import models
 
+# import settings to access user auth
+# from django.db import settings
+
 # Create your models here.
 class Categories(models.Model):
     name = models.CharField(max_length=100)
@@ -29,4 +32,4 @@ class Receipts(models.Model):
     )
 
     def __str__(self):
-        return self.vendor + self.category + self.account
+        return self.vendor
