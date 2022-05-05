@@ -11,10 +11,32 @@
   </head>
   <body>
     <nav>
-      <a class="nav-link" href="{% url 'receipts_list' %}">Receipts</a>
-      <a class="nav-link" href="{% url 'receipt_create' %}">Create Receipt</a>
-      <a class="nav-link" href="{% url 'catergories_list' %}">Categories</a>
-      <a class="nav-link" href="{% url 'accounts_list' %}">Accounts</a>
+      <ul>
+        <li class="nav-link">
+          <a href="{% url 'admin:index' %}">Admin</a>
+        </li>
+        <li class="nav-link">
+          <a href="{% url 'receipts_list' %}">Receipts</a>
+        </li>
+        <li class="nav-link">
+          <a href="{% url 'receipt_create' %}">Create Receipt</a>
+        </li>
+        <li class="nav-link">
+          <a href="{% url 'catergories_list' %}">Categories</a>
+        </li>
+        <li class="nav-link">
+          <a href="{% url 'accounts_list' %}">Accounts</a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-link">
+          <a href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-link">
+          <a href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
+      </ul>
     </nav>
     {% block main_content %} {% endblock main_content %}
   </body>

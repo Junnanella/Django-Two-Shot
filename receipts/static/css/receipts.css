@@ -1,3 +1,20 @@
 body {
     background-color: #F8ECD1;
 }
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    margin: 70px;
+}
+
+.nav-link{
+    list-style: none;
+    display: inline-block;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+}
