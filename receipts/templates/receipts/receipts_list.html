@@ -10,6 +10,7 @@
       <th>Category</th>
       <th>Account</th>
     </thead>
+    {% if request.user.is_authenticated %}
     <tbody>
       {% for receipt in receipts %}
       <tr>
@@ -22,6 +23,7 @@
       </tr>
       {% endfor %}
     </tbody>
+    {% endif %}
   </table>
 </main>
 {% endblock main_content %}

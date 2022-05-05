@@ -5,10 +5,10 @@ from django.urls import path
 from django.contrib.auth.views import LoginView
 
 # built in logout view directing me to logot html, so trying function view
-from .views import logout
+from .views import logout, signup
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", logout, name="logout"),
-    # add path for signup
+    path("signup/", signup, name="signup"),
 ]
