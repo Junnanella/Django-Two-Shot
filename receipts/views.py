@@ -1,3 +1,4 @@
+from re import L
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 
@@ -13,7 +14,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 # List Views for Receipts, Categories, and Accounts
-class ReceiptsListView(ListView):
+class ReceiptsListView(LoginRequiredMixin,ListView):
     model = Receipts
     template_name = "receipts/receipts_list.html"
     context_object_name = "receipts"
@@ -22,7 +23,7 @@ class ReceiptsListView(ListView):
         return Receipts.objects.filter(purchaser=self.request.user)
 
 
-class CategoriesListView(ListView):
+class CategoriesListView(LoginRequiredMixin,ListView):
     model = Categories
     template_name = "receipts/categories_list.html"
     context_object_name = "categories"
@@ -31,7 +32,7 @@ class CategoriesListView(ListView):
         return Categories.objects.filter(owner=self.request.user)
 
 
-class AccountsListView(ListView):
+class AccountsListView(LoginRequiredMixin,ListView):
     model = Accounts
     template_name = "receipts/accounts_list.html"
     context_object_name = "accounts"

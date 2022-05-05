@@ -5,9 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
-def logout(request):
-    return render(request, "registration/logged_out.html")
-
 
 def signup(request):
     # if the request method is "POST", then

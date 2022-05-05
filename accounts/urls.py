@@ -2,13 +2,13 @@
 from django.urls import path
 
 # import views - login and logout are builtin views with Django
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 
 # built in logout view directing me to logot html, so trying function view
-from .views import logout, signup
+from .views import signup
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
-    path("logout/", logout, name="logout"),
+    path("logout/", LogoutView.as_view(), name="logout"),
     path("signup/", signup, name="signup"),
 ]

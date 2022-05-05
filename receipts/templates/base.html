@@ -12,11 +12,11 @@
   <body>
     <nav>
       <ul>
-        {% if user.is_staff %}
+        {% if user.is_authenticated %} {% if user.is_staff %}
         <li class="nav-link">
           <a href="{% url 'admin:index' %}">Admin</a>
         </li>
-        {% endif %} {% if user.is_authenticated %}
+        {% endif %}
         <li class="nav-link">
           <a href="{% url 'receipts_list' %}">Receipts</a>
         </li>
