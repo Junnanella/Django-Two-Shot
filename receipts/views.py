@@ -12,19 +12,19 @@ from django.views.generic import ListView, CreateView
 # List Views for Receipts, Categories, and Accounts
 class ReceiptsListView(ListView):
     model = Receipts
-    template_name = "receipts_list.html"
+    template_name = "receipts/receipts_list.html"
     context_object_name = "receipts"
 
 
 class CategoriesListView(ListView):
     model = Categories
-    template_name = "categories_list.html"
+    template_name = "receipts/categories_list.html"
     context_object_name = "categories"
 
 
 class AccountsListView(ListView):
     model = Accounts
-    template_name = "accounts_list.html"
+    template_name = "receipts/accounts_list.html"
     context_object_name = "accounts"
 
 
@@ -37,4 +37,15 @@ class ReceiptCreateView(CreateView):
     def form_valid(self, form):
         receipt = form.save(commit=False)
         receipt.save()
+        return redirect("receipts_list")
+
+
+class CategoriesCreateView(CreateView):
+    model = Categories
+    template_name = "receipts/category_create.html"
+    fields = ["name"]
+
+    def form_valid(self, form):
+        category = form.save(commit=False)
+        category.save()
         return redirect("receipts_list")

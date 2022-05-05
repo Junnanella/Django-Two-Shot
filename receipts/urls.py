@@ -7,11 +7,17 @@ from .views import (
     CategoriesListView,
     AccountsListView,
     ReceiptCreateView,
+    CategoriesCreateView,
 )
 
 urlpatterns = [
     path("", ReceiptsListView.as_view(), name="receipts_list"),
-    path("categories/", CategoriesListView.as_view(), name="catergories_list"),
+    path("categories/", CategoriesListView.as_view(), name="categories_list"),
     path("accounts/", AccountsListView.as_view(), name="accounts_list"),
     path("create/", ReceiptCreateView.as_view(), name="receipt_create"),
+    path(
+        "categories/create",
+        CategoriesCreateView.as_view(),
+        name="category_create",
+    ),
 ]
