@@ -10,6 +10,7 @@
       {% for category in categories %}
       <tr>
         <td>{{category.name}}</td>
+        <td>{{category.receipts.all|length}}</td>
       </tr>
       {% endfor %}
     </tbody>
