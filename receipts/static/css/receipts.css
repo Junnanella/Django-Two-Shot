@@ -4,9 +4,13 @@ body {
 
 ul {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     justify-content: center;
-    margin: 70px;
+    margin: 20px 10px 30px 10px;
+}
+
+li {
+    padding-left: 20px;
 }
 
 .nav-link{

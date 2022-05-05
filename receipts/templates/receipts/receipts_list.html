@@ -1,5 +1,27 @@
 {% extends 'base.html' %} {% block main_content %}
 <main>
   <h1>Receipts</h1>
+  <table>
+    <thead>
+      <th>Vendor</th>
+      <th>Total</th>
+      <th>Tax</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Account</th>
+    </thead>
+    <tbody>
+      {% for receipt in receipts %}
+      <tr>
+        <td>{{ receipt.vendor }}</td>
+        <td>{{ receipt.total }}</td>
+        <td>{{ receipt.tax }}</td>
+        <td>{{ receipt.date }}</td>
+        <td>{{ receipt.category }}</td>
+        <td>{{ receipt.account }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </main>
 {% endblock main_content %}

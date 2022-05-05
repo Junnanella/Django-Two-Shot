@@ -48,4 +48,15 @@ class CategoriesCreateView(CreateView):
     def form_valid(self, form):
         category = form.save(commit=False)
         category.save()
-        return redirect("receipts_list")
+        return redirect("categories_list")
+
+
+class AccountCreateView(CreateView):
+    model = Accounts
+    template_name = "receipts/account_create.html"
+    fields = ["name", "number"]
+
+    def form_valid(self, form):
+        account = form.save(commit=False)
+        account.save()
+        return redirect("accounts_list")

@@ -10,7 +10,7 @@ class Categories(models.Model):
 
 class Accounts(models.Model):
     name = models.CharField(max_length=100)
-    number = models.PositiveIntegerField
+    number = models.PositiveIntegerField()
 
     def __str__(self):
         return self.name

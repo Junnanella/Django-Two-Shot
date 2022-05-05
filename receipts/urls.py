@@ -8,6 +8,7 @@ from .views import (
     AccountsListView,
     ReceiptCreateView,
     CategoriesCreateView,
+    AccountCreateView,
 )
 
 urlpatterns = [
@@ -19,5 +20,8 @@ urlpatterns = [
         "categories/create",
         CategoriesCreateView.as_view(),
         name="category_create",
+    ),
+    path(
+        "accounts/create", AccountCreateView.as_view(), name="account_create"
     ),
 ]
