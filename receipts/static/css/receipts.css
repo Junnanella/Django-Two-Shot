@@ -4,7 +4,7 @@ body {
 
 ul {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     justify-content: center;
     margin: 70px;
 }
@@ -17,4 +17,19 @@ ul {
 h1 {
     display: block;
     text-align: center;
+}
+
+div.form{
+    display: grid;
+    justify-content: center;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 2px solid #85586F;
+    margin: auto
+}
+
+th, td{
+    padding: 10px;
 }
