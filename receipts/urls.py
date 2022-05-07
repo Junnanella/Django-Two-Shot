@@ -17,11 +17,11 @@ urlpatterns = [
     path("accounts/", AccountsListView.as_view(), name="accounts_list"),
     path("create/", ReceiptCreateView.as_view(), name="receipt_create"),
     path(
-        "categories/create",
+        "categories/create/",
         CategoriesCreateView.as_view(),
         name="category_create",
     ),
     path(
-        "accounts/create", AccountCreateView.as_view(), name="account_create"
+        "accounts/create/", AccountCreateView.as_view(), name="account_create"
     ),
 ]
